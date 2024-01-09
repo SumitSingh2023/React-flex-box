@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-flex</title>
+</head>
+<body>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+</body>
+</html>
+
+<script type="text/babel">
+
+    let root=document.getElementById('root');
+    let rootElement= ReactDOM.createRoot(root);
+
+    let mainDiv={
+        border:"2px solid black",
+        display:"flex",
+        justifyContent:"center"
+    }
+
+    let childDiv={width:"40px",
+        height:"40px",
+        border:"2px solid black",
+        margin:"10px",
+        backgroundColor:"red"
+
+    }
+
+
+    let flex=React.createElement("div",{id:"parent",style:mainDiv},[
+        React.createElement("div",{id:"child1",style:childDiv},"1"),
+
+        React.createElement("div",{id:"child2",style:{width:"40px",
+        height:"40px",
+        border:"2px solid black",
+        margin:"10px",
+        backgroundColor:"yellow"
+
+    }},"2"),
+
+        React.createElement("div",{id:"child3",style:{width:"40px",height:"40px",border:"2px solid black",margin:"10px",backgroundColor:"green"}},"3"),
+
+        React.createElement("div",{id:"child4",style:{width:"40px",height:"40px",border:"2px solid black",margin:"10px",backgroundColor:"purple"}},"4")
+
+    ],)
+
+   rootElement.render(flex)
+</script>
